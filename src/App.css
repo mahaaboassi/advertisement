@@ -1,38 +1,108 @@
-.App {
-  text-align: center;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+  color: #1e293b;
+}
+/* public styles for fonts size */
+.font-size-4xl{
+  font-size: clamp(1.8rem, 2vw + 0.8rem, 3.2rem);
+}
+.font-size-xxl{
+  font-size: clamp(1.2rem, 0.86vw + 0.77rem, 1.8rem);
+}
+.font-size-xl{
+  font-size: clamp(1.1rem, 0.71vw + 0.74rem, 1.6rem);
+}
+.font-size-l{
+  font-size: clamp(1rem, 0.57vw + 0.71rem, 1.4rem);
+}
+.font-size-s{
+  font-size: clamp(0.9rem, 0.43vw + 0.69rem, 1.2rem);
+}
+.font-size-xs{
+  font-size: clamp(0.8rem, 0.29vw + 0.66rem, 1rem);
+}
+.font-size-xxs{
+  font-size: clamp(0.7rem, 0.29vw + 0.56rem, 0.9rem);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* end  */
+.tabs ul {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap:30px
 }
-
-.App-link {
-  color: #61dafb;
+.tabs ul li{
+  position: relative;
+  padding: 10px 0;
 }
+.tabs ul li:hover{
+  cursor: pointer;
+  position: relative;
+  color: #475569;
+}
+.tabs ul li:hover::after{
+  content: "";
+  position: absolute;
+  bottom: 0;
+  height: 3px;
+  border-radius: 8px;
+  background-color: #475569;
+  z-index: 100;
+  width: 100%;
+  left: 0;
+}
+.tools-bar{
+  border:1px solid #a8a29e;
+  border-radius: 8px;
+  padding: 5px;
+  height: 115px;
+}
+.tools-bar div:nth-child(1) ,.tools-bar div:nth-child(2),.tools-bar div:nth-child(3){
+  padding: 5px;
+}
+.tools-bar div:nth-child(1):hover ,.tools-bar div:nth-child(2):hover ,.tools-bar div:nth-child(3):hover{
+  cursor: pointer;
+  background-color: #e7e5e4 ;
+  border-radius: 8px;
+}
+.icons{
+  padding: 4px;
+}
+.icons:hover{
+  cursor: pointer;
+  background-color: #e7e5e4 ;
+  border-radius: 8px;
+}
+.forms{
+  width: 100%;
+  
+}
+.forms input{
+  border: none;
+  border-bottom: 1px solid grey;
+  padding: 5px;
+  margin: 5px 0;
+}
+.forms input:focus{
+  outline: none;
+  border: none;
+  border-bottom: 2px solid #475569 ;
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+}
+.section{
+  position: relative;
+}
+.section::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  height: 90%;
+  width: 5px;
+  border-top-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+
+  background-color: #475569;
+
 }
